@@ -1,9 +1,8 @@
 package blackriders.demochart;
 
 /**
- * @author Sanwal Singh
+ * Created by Sanwal Singh on 21/4/16.
  */
-
 import android.app.Application;
 import android.text.TextUtils;
 

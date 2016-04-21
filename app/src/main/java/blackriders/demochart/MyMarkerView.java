@@ -11,9 +11,7 @@ import com.github.mikephil.charting.highlight.Highlight;
 import com.github.mikephil.charting.utils.Utils;
 
 /**
- * Custom implementation of the MarkerView.
- * 
- * @author Philipp Jahoda
+ * Created by Sanwal Singh on 21/4/16.
  */
 public class MyMarkerView extends MarkerView {
 

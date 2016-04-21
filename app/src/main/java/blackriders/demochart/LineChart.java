@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.WindowManager;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -12,7 +11,6 @@ import com.android.volley.Response;
 import com.android.volley.RetryPolicy;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
-import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.components.YAxis;
@@ -26,13 +24,15 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-
-public class MainActivity extends Activity {
+/**
+ * Created by Sanwal Singh on 21/4/16.
+ */
+public class LineChart extends Activity {
 
     ArrayList<Entry> x;
     ArrayList<String> y;
     String url = "http://www.mysiponline.com/admin-panel/AndroidApi/navDetails";
-    private LineChart mChart;
+    private com.github.mikephil.charting.charts.LineChart mChart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +46,7 @@ public class MainActivity extends Activity {
         y = new ArrayList<String>();
 
 
-        mChart = (LineChart) findViewById(R.id.chart1);
+        mChart = (com.github.mikephil.charting.charts.LineChart) findViewById(R.id.chart1);
         mChart.setDrawGridBackground(false);
 
         // no description text
@@ -140,7 +140,7 @@ public class MainActivity extends Activity {
             @Override
             public void onErrorResponse(VolleyError error) {
                 Log.e("Login", "Login Error: " + error.getMessage());
-                Toast.makeText(MainActivity.this,
+                Toast.makeText(LineChart.this,
                         "Server too busy. Please try after sometime.",
                         Toast.LENGTH_LONG).show();
             }

@@ -29,12 +29,7 @@ import java.util.ArrayList;
  */
 public class PieChartActivity extends Activity implements OnChartValueSelectedListener {
 
-    protected String[] mParties = new String[]{
-            "Party A", "Party B", "Party C", "Party D", "Party E", "Party F", "Party G", "Party H",
-            "Party I", "Party J", "Party K", "Party L", "Party M", "Party N", "Party O", "Party P",
-            "Party Q", "Party R", "Party S", "Party T", "Party U", "Party V", "Party W", "Party X",
-            "Party Y", "Party Z"
-    };
+    protected String[] mParties = new String[]{"Equity", "Hybrid", "Debt"};
     PieChart mChart;
 
     @Override
@@ -89,12 +84,11 @@ public class PieChartActivity extends Activity implements OnChartValueSelectedLi
 
         ArrayList<Entry> yVals1 = new ArrayList<Entry>();
 
-        // IMPORTANT: In a PieChart, no values (Entry) should have the same
-        // xIndex (even if from different DataSets), since no values can be
-        // drawn above each other.
-        for (int i = 0; i < count + 1; i++) {
-            yVals1.add(new Entry((float) (Math.random() * mult) + mult / 5, i));
-        }
+
+        yVals1.add(new Entry((float) 10, 0));
+        yVals1.add(new Entry((float) 40, 1));
+        yVals1.add(new Entry((float) 50, 2));
+
 
         ArrayList<String> xVals = new ArrayList<String>();
 
@@ -136,7 +130,7 @@ public class PieChartActivity extends Activity implements OnChartValueSelectedLi
         mChart.setData(data);
 
         // undo all highlights
-        mChart.highlightValues(null);
+       // mChart.highlightValues(null);
 
         mChart.invalidate();
     }
